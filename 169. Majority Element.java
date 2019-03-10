@@ -24,10 +24,11 @@ class Solution {
         }
         int maxcount = 0;
         int result=0;
-        for(int i=0;i<nums.length;i++){
-            if(countMap.get(nums[i])>maxcount){
-                maxcount= countMap.get(nums[i]);
-                result = nums[i];
+        for(Map.Entry<Integer,Integer> hm : countMap.entrySet()){
+
+            if(hm.getValue() > maxcount){
+                maxcount = hm.getValue();
+                result= hm.getKey();
             }
         }
         return result;
